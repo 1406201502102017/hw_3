@@ -56,7 +56,9 @@ for(int i = 0; i < array.Length; i++)
 Array.Reverse(array);
 Console.WriteLine(string.Join(", ", array));
 // 398943
+
 // int[] array = new int[6];
+
 // array[0] = 398943 % 10; --> 3
 // n /= 10; --> 39894
 // array[1] = 39894 % 10; --> 4
@@ -69,4 +71,5 @@ Console.WriteLine(string.Join(", ", array));
 // n /= 10; --> 3
 // array[5] = 3 % 10; --> 3
 // n /= 10; --> 0
+
 // 349893
