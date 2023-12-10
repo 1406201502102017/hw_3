@@ -16,3 +16,29 @@
 */
 //#1
 Console.Clear();
+int[] arr = new int[10];
+int count = 0;
+for (int i = 0; i < arr.Length; i++)
+{
+    int n = new Random().Next(1, 101);
+    arr[i] = n;
+    Console.Write(arr[i] + " ");
+}
+Console.WriteLine();
+for (int i = 0; i < arr.Length; i++)
+{
+    if (arr[i] >= 20 && arr[i] <= 90)
+    {
+        Console.Write(arr[i] + " ");
+        count++;
+    }   
+}
+Console.WriteLine();
+Console.WriteLine("Количество элементов массива в диапазоне [20, 90]: " + count);
+Console.WriteLine();
+//#2
+// for(int i = 0; i < arr.Length; i++) {
+//     if (arr[i] % 2 == 0) {
+//         Console.Write(string.Join(", ", arr));
+//     }
+// }
