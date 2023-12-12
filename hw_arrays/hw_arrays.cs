@@ -69,3 +69,13 @@ Console.WriteLine("MIN число --> " + "{0:0.000}", min);
 double dif = max - min;
 Console.WriteLine("Разница между числами: " + "{0:0.000}", dif);
 //#4-----------------------------------------------------------------------------
+int w = new Random().Next(1, 100001);
+Console.WriteLine("\nВвести число: " + w);
+int[] a = new int[w.ToString().Length];
+for (int i = 0; i < a.Length; i++)
+{
+    a[i] = w % 10;
+    w /= 10;
+}
+Array.Reverse(a);
+Console.WriteLine(string.Join(" ", a));
