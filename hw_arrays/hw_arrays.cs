@@ -14,8 +14,8 @@
 Создайте массив, состоящий из цифр этого числа. Старший разряд числа должен располагаться на 0-м индексе массива, 
 младший – на последнем. Размер массива должен быть равен количеству цифр.
 */
-//#1-----------------------------------------------------------------------------
 Console.Clear();
+//#1-----------------------------------------------------------------------------
 int[] arr = new int[10];
 int count = 0;
 for (int i = 0; i < arr.Length; i++)
@@ -24,7 +24,7 @@ for (int i = 0; i < arr.Length; i++)
     arr[i] = n;
     Console.Write(arr[i] + " ");
 }
-Console.WriteLine();
+Console.WriteLine("\n");
 for (int i = 0; i < arr.Length; i++)
 {
     if (arr[i] >= 20 && arr[i] <= 90)
@@ -34,7 +34,7 @@ for (int i = 0; i < arr.Length; i++)
     }
 }
 Console.WriteLine();
-Console.WriteLine("Количество элементов массива в диапазоне [20, 90]: " + count);
+Console.WriteLine("Количество элементов массива в диапазоне [20, 90]: " + count + "\n");
 //#2-----------------------------------------------------------------------------
 int check = 0;
 for (int i = 0; i < arr.Length; i++)
@@ -47,3 +47,25 @@ for (int i = 0; i < arr.Length; i++)
 }
 Console.WriteLine();
 Console.WriteLine("Количество четных чисел массива: " + check);
+//#3-----------------------------------------------------------------------------
+Console.Write("\nДлина массива: ");
+int f = Convert.ToInt32(Console.ReadLine());
+double[] array = new double[f];
+for (int i = 0; i < array.Length; i++)
+{
+    double g = new Random().NextDouble();
+    Console.Write("{0,8:N3}", g * 5);
+    array[i] = g * 5;
+}
+Console.WriteLine();
+double max = array[0], min = array[0];
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i] > max) max = array[i];
+    if (array[i] < min) min = array[i];
+}
+Console.WriteLine("MAX число --> " + "{0:0.000}", max);
+Console.WriteLine("MIN число --> " + "{0:0.000}", min);
+double dif = max - min;
+Console.WriteLine("Разница между числами: " + "{0:0.000}", dif);
+//#4-----------------------------------------------------------------------------
