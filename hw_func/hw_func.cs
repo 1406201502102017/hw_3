@@ -10,39 +10,39 @@
 */
 Console.Clear();
 //#1
-// void infinityNum()
-// {
-//     bool x = true;
-//     while (x)
-//     {
-//         int q = Convert.ToInt32(Console.ReadLine());
-//         int sum = ((q / 10) + (q % 10)) % 2;
-//         if (q > 10 & sum == 0) break;
-//         else
-//         {
-//             string? s = Console.ReadLine();
-//             if (s == "q") x = false;
-//         }
-//     }
-// }
-// infinityNum();
+void infinityNum()
+{
+    bool x = true;
+    while (x)
+    {
+        int q = Convert.ToInt32(Console.ReadLine());
+        int sum = ((q / 10) + (q % 10)) % 2;
+        if (q > 10 & sum == 0) break;
+        else
+        {
+            string? s = Console.ReadLine();
+            if (s == "q") x = false;
+        }
+    }
+}
+infinityNum();
 //#2
-// void arrThree()
-// {
-//     int count = 0;
-//     int n = Convert.ToInt32(Console.ReadLine());
-//     int[] arr = new int[n];
-//     for (int i = 0; i < arr.Length; i++)
-//     {
-//         int num = new Random().Next(100, 1000);
-//         arr[i] = num;
-//         Console.Write(arr[i] + " ");
-//         if (arr[i] % 2 == 0)
-//             count++;
-//     }
-//     Console.WriteLine("\nКоличество четных чисел: " + count);
-// }
-// arrThree();
+void arrThree()
+{
+    int count = 0;
+    int n = Convert.ToInt32(Console.ReadLine());
+    int[] arr = new int[n];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        int num = new Random().Next(100, 1000);
+        arr[i] = num;
+        Console.Write(arr[i] + " ");
+        if (arr[i] % 2 == 0)
+            count++;
+    }
+    Console.WriteLine("\nКоличество четных чисел: " + count);
+}
+arrThree();
 //#3
 void arrReverse()
 {
