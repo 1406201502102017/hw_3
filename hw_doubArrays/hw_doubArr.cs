@@ -26,24 +26,45 @@ void createDoubleArray(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            mtx[i, j] = new Random().Next(1, 10);
+            arr[i, j] = new Random().Next(1, 10);
             Console.Write(arr[i, j] + " ");
         }
         Console.WriteLine();
     }
 }
-// #1
+// #1-----------------------------------------------------
 int returnElement(int[,] arr, int a, int b)
 {
     int f = 0;
     if (a <= arr.GetLength(0) & b <= arr.GetLength(1))
-    {
         f = arr[a, b];
-    }
-    else Console.WriteLine("Такого элемента нет!");
+    else
+        Console.WriteLine("Такого элемента нет!");
     return f;
 }
 
 createDoubleArray(mtx);
 int d = returnElement(mtx, 1, 2);
 Console.WriteLine($"\nЗначение элемента равно: {d}");
+
+// #2-----------------------------------------------------
+void replaceRowArray(int[,] arr)
+{
+    Console.Write("\nМассив с переставленной 1-ой и последней строкой" + "\n");
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        int tmp = arr[arr.GetLength(0) - 1, i];
+        arr[arr.GetLength(0) - 1, i] = arr[0, i];
+        arr[0, i] = tmp;
+    }
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            Console.Write(arr[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+replaceRowArray(mtx);
