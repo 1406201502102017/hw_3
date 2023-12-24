@@ -98,3 +98,53 @@ void returnRowIndex(int[,] arr)
 }
 
 returnRowIndex(mtx);
+
+// #4-----------------------------------------------------
+int[,] intersection = new int[x, y];
+int[,] intersectionLines(int[,] arr, int[,] intersection)
+
+{
+    int tmp = arr[0, 0];
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            if (arr[i, j] <= tmp)
+            {
+                intersection[0, 0] = i;
+                intersection[0, 1] = j;
+                tmp = arr[i, j];
+            }
+        }
+    }
+    Console.WriteLine($"\nMинимальное значение: {tmp}");
+    return intersection;
+}
+
+int[,] smallElement = new int[1, 2];
+int[,] newArray = new int[mtx.GetLength(0) - 1, mtx.GetLength(1) - 1];
+
+void delLines(int[,] arr, int[,] smallElement, int[,] newArray)
+{
+    int k = 0, l = 0;
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            if (smallElement[0, 0] != i && smallElement[0, 1] != j)
+            {
+                newArray[k, l] = arr[i, j];
+                l++;
+            }
+        }
+        l = 0;
+        if (smallElement[0, 0] != i)
+        {
+            k++;
+        }
+    }
+}
+
+int[,] u = intersectionLines(mtx, intersection);
+Console.WriteLine(u);
+delLines(mtx, smallElement, newArray);
