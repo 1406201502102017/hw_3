@@ -50,7 +50,7 @@ Console.WriteLine($"\nЗначение элемента равно: {d}");
 // #2-----------------------------------------------------
 void replaceRowArray(int[,] arr)
 {
-    Console.Write("\nМассив с переставленной 1-ой и последней строкой" + "\n");
+    Console.WriteLine("\nМассив с переставленной 1-ой и последней строкой\n");
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         int tmp = arr[arr.GetLength(0) - 1, i];
@@ -68,3 +68,33 @@ void replaceRowArray(int[,] arr)
 }
 
 replaceRowArray(mtx);
+
+// #3-----------------------------------------------------
+void returnRowIndex(int[,] arr)
+{
+    int[] tmp = new int[arr.GetLength(0)];
+    int p;
+    int i;
+    Console.Write("\nСуммы строк массива: ");
+    for (i = 0; i < arr.GetLength(0); i++)
+    {
+        p = 0;
+        for (int j = 0; j < arr.GetLength(1); j++)
+            p += arr[i, j];
+        tmp[i] = p;
+        Console.Write(p + " ");
+    }
+    int min = tmp[0];
+    int index = 0;
+    for (i = 0; i < tmp.Length; i++)
+    {
+        if (tmp[i] < min)
+        {
+            min = tmp[i];
+            index = i;
+        }
+    }
+    Console.Write($"--> минимальное значение {min} --> индекс строки: {index}\n");
+}
+
+returnRowIndex(mtx);
