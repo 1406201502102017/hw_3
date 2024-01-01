@@ -30,4 +30,19 @@ int AkkermanFunction(int m, int n)
         return AkkermanFunction(m - 1, 1);
     return AkkermanFunction(m - 1, AkkermanFunction(m, n - 1));
 }
-Console.WriteLine($"Результат вычисления по функции Аккермана: {AkkermanFunction(m, n)}");
+Console.WriteLine($"Результат вычисления функции Аккермана: {AkkermanFunction(m, n)}");
+// #3--------------------------------------------------------------
+int[] array = { 1, 56, 8, 79, 12, 41 };
+void PrintArray(int[] arr, int i = 0)
+{
+    if (i >= arr.Length)
+        return;
+    Console.Write(arr[i] + " ");
+    i++;
+    PrintArray(arr, i);
+}
+PrintArray(array);
+Console.WriteLine();
+Array.Reverse(array);
+PrintArray(array);
+Console.WriteLine();
